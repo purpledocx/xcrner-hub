@@ -1,64 +1,140 @@
-# 🌐 xcrner-hub & Tools
-**Personal web hub featuring a portfolio and a real-time password strength analyzer**
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/)
+<div align="center">
+
+# Xcrner Hub
+
+### A modern security toolkit built with **React + FastAPI**
+
+<p align="center">
+A centralized platform providing powerful security and networking utilities, including an advanced Password Analyzer and a high-performance Network Port Scanner.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E" />
+  <img src="https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+</p>
+
+</div>
+---
+# 🛠 Tech Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| **Frontend** | React 19 • React Router • Vite • Tailwind CSS • Lucide Icons |
+| **Backend** | Python 3.10+ • FastAPI • Uvicorn • Pydantic |
+| **Tooling** | npm • Node.js • Git |
 
 ---
-## 📌 About The Project
-**xcrner-hub** is a personal multi-page website/archive hub that combines a personal profile, project showcase, and interactive web tools. 
----
-## 🛠️ Tech Stack
-| Domain | Technologies |
-| --- | --- |
-| **Backend** | Python 3.10+, FastAPI, Uvicorn, Pydantic |
-| **Frontend** | HTML5, JavaScript (Vanilla ES6+), Tailwind CSS v3 |
-| **Tools** | Node.js, npm, Git |
+# Installation
 
----
-## 🚀 Getting Started
-### 1. Clone the Repository
+## Clone the repository
+
 ```bash
-git clone https://github.com/purpledocx/xcrner-hub.git
+git clone https://github.com/yourusername/xcrner-hub.git
+cd xcrner-hub
+```
+## Backend Setup
+
+Navigate to the backend directory.
+
+```bash
+cd backend
+```
+
+Install dependencies.
+
+```bash
+pip install -r requirements.txt
+```
+
+Start the FastAPI server.
+
+```bash
+uvicorn main:app --reload
+```
+
+The backend will run at:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Frontend Setup
+
+Navigate to the frontend.
+
+```bash
 cd xcrner-hub
 ```
 
-### 2. Backend Setup (FastAPI)
-In the first terminal window, start the Python backend server:
-```bash
-# Install Python dependencies
-pip install -r requirements.txt
+Install dependencies.
 
-# Run Uvicorn server from the root directory
-uvicorn backend.main:app --reload
-```
-> 📍 Backend will be available at: `http://127.0.0.1:8000`
-
-### 3. Frontend Setup (Tailwind CSS)
-In a **second terminal window**, compile Tailwind styles in watch mode:
 ```bash
-# Install Node.js dependencies
 npm install
-
-# Run Tailwind CSS compiler
-npx tailwindcss -i input.css -o ./src/output.css --watch
 ```
 
-### 4. View in Browser
-Open `index.html` or `pwdanalyzer.html` directly in your browser (or use the **Live Server** extension in VS Code).
+Start the development server.
 
+```bash
+npm run dev
+```
+
+Open:
+
+```
+http://localhost:5173
+```
+
+# Running the Project
+
+| Service | URL |
+|---------|------|
+| Frontend | http://localhost:5173 |
+| Backend | http://127.0.0.1:8000 |
+| API Docs | http://127.0.0.1:8000/docs |
 ---
-## 🔌 API Endpoint
-### `POST /analyze`
-Accepts password input and returns UI formatting parameters along with strength analysis.
-**Request:**
+# Project Structure
+
+```text
+xcrner-hub/
+│
+├── backend/
+│   ├── main.py
+│   └── requirements.txt
+│
+├── xcrner-hub/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── pages/
+│   │   └── components/
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
+```
+---
+
+# API Reference
+
+## POST `/analyze`
+
+Analyze password strength.
+
+### Request
+
 ```json
 {
   "password": "MySecretPassword123"
 }
 ```
-**Response (200 OK):**
+
+### Response
+
 ```json
 {
   "strength": "Strong",
@@ -72,4 +148,110 @@ Accepts password input and returns UI formatting parameters along with strength 
 ```
 
 ---
-Made by [purpledocx](https://github.com/purpledocx)
+
+## POST `/scan`
+
+Scan a target host for open ports.
+
+### Request
+
+```json
+{
+  "target": "127.0.0.1",
+  "ports": [22, 80, 443, 8000]
+}
+```
+
+### Response
+
+```json
+{
+  "target": "127.0.0.1",
+  "results": [
+    {
+      "port": 22,
+      "status": "closed"
+    },
+    {
+      "port": 80,
+      "status": "closed"
+    },
+    {
+      "port": 443,
+      "status": "closed"
+    },
+    {
+      "port": 8000,
+      "status": "open"
+    }
+  ],
+  "scan_duration_ms": 142
+}
+```
+
+---
+
+# Usage Examples
+
+## Password Analyzer
+
+```javascript
+const checkPassword = async () => {
+  const response = await fetch("http://127.0.0.1:8000/analyze", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      password: "MySecretPassword123",
+    }),
+  });
+
+  const data = await response.json();
+  console.log(data);
+};
+```
+
+---
+
+## Port Scanner
+
+```javascript
+const scanNetwork = async () => {
+  const response = await fetch("http://127.0.0.1:8000/scan", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      target: "127.0.0.1",
+      ports: [8000, 5173],
+    }),
+  });
+
+  const data = await response.json();
+  console.log(data);
+};
+```
+
+---
+
+# Production Build
+
+Generate an optimized frontend build.
+
+```bash
+cd xcrner-hub
+npm run build
+```
+
+The production files will be generated inside:
+
+```text
+dist/
+```
+
+---
+<div align="center">
+</div>
+
