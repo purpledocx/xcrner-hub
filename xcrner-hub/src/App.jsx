@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useEffect } from "react";
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -8,16 +9,25 @@ import Projects from './pages/Projects';
 import PwdAnalyzer from './pages/PwdAnalyzer';
 
 export default function App() {
+
+  useEffect(() => {
+    const cursor = new cursoreffects.ghostCursor();
+
+    return () => {
+      cursor.destroy();
+    };
+  }, []);
+
+
   return (
     <BrowserRouter>
-      {/* fullscreen wrapper with bg */}
       <div 
         className="min-h-screen flex flex-col bg-cover bg-center bg-no-repeat m-0" 
         style={{ backgroundImage: "url('/img/bg.jpg')" }}
       >
+
         <Header />
-        
-        {/* dinamical rendering of pages here*/}
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/stuff" element={<Stuff />} />
@@ -26,6 +36,7 @@ export default function App() {
         </Routes>
 
         <Footer />
+
       </div>
     </BrowserRouter>
   );

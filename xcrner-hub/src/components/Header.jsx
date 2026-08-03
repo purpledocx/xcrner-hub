@@ -11,11 +11,8 @@ export default function Header() {
           to="/" 
           className="hover:text-purple-300 transition-colors"
           style={location.pathname === '/' ? { textShadow: '0 0 20px rgba(212,0,255,0.95), 0 0 35px rgba(0,191,255,0.65)' } : {}}
-        >
-          xcrner-hub
-        </Link>
+        >xcrner-hub</Link>
         <Link to="/projects" className="hover:text-purple-300 transition-colors">projects</Link>
-        <Link to="/analyzer" className="hover:text-purple-300 transition-colors">analyzer</Link>
       </nav>
     </header>
   );

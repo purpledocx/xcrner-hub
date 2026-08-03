@@ -44,7 +44,7 @@ export default function PwdAnalyzer() {
   return (
     <main className="grow flex items-center justify-center p-6">
       <div className="w-full max-w-lg bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] rounded-2xl p-8 font-mono">
-        <h1 className="text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-white">
+        <h1 className="text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-linear-to-r from-purple-300 to-white">
           Password Analyzer
         </h1>
 
