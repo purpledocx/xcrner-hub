@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Xcrner Hub
+# Xcrner Hub
 
 ### A modern security toolkit built with **React + FastAPI**
 
@@ -22,50 +22,17 @@ A centralized platform providing powerful security and networking utilities, inc
 
 # 📖 Table of Contents
 
-- [✨ Features](#-features)
-- [🛠 Tech Stack](#-tech-stack)
-- [📂 Project Structure](#-project-structure)
-- [⚙ Installation](#-installation)
-- [🚀 Running the Project](#-running-the-project)
-- [🔌 API Reference](#-api-reference)
-- [💻 Usage Examples](#-usage-examples)
-- [🏗 Production Build](#-production-build)
-- [📬 Contact](#-contact)
+- [ Features](#-features)
+- [ Tech Stack](#-tech-stack)
+- [ Project Structure](#-project-structure)
+- [Installation](#-installation)
+- [Running the Project](#-running-the-project)
+- [API Reference](#-api-reference)
+- [Usage Examples](#-usage-examples)
+- [Production Build](#-production-build)
+- [Contact](#-contact)
 
 ---
-
-# ✨ Features
-
-### 🔐 Password Analyzer
-
-- Real-time password strength analysis
-- Entropy calculation
-- Security recommendations
-- Color-coded strength meter
-- Instant feedback
-
----
-
-### 🌐 Network Port Scanner
-
-- Fast TCP port scanning
-- Scan custom port lists
-- Detect open and closed ports
-- Lightweight FastAPI implementation
-- Responsive frontend interface
-
----
-
-### ⚡ Modern Web Application
-
-- React 19 + Vite
-- Tailwind CSS UI
-- FastAPI backend
-- Asynchronous API endpoints
-- Clean project architecture
-
----
-
 # 🛠 Tech Stack
 
 | Category | Technologies |
@@ -317,10 +284,5 @@ If you have questions, suggestions, or improvements, feel free to open an issue 
 ---
 
 <div align="center">
-
-### ⭐ If you found this project useful, consider giving it a star!
-
-Made with ❤️ using **React**, **FastAPI**, and **Tailwind CSS**
-
 </div>
 ````
