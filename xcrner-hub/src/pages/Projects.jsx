@@ -15,7 +15,7 @@ const PROJECTS = [
     title: "Live Port Scanner",
     description:
       "Real-time TCP port scanning tool built with WebSockets and FastAPI backend.",
-    path: "/scanner",
+    path: "/portscanner",
     active: true,
   },
 ];
