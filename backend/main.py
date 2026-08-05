@@ -1,6 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import asyncio
 
 app = FastAPI()
 
@@ -68,3 +69,38 @@ def analyze(data: PasswordModel):
         "color": color,
         "suggestions": suggestions
     }
+
+
+
+"""Port Scanner"""
+async def check_port(host: str, port: int, timeout: float = 0.5) -> dict:
+    try:
+        conn = asyncio.open_connection(host, port)
+        reader, writer = await asyncio.wait_for(conn, timeout=timeout)
+        
+        writer.close()
+        await writer.wait_closed()
+        
+        return {"port": port, "status": "open"}
+    except (asyncio.TimeoutError, OSError):
+        return {"port": port, "status": "closed"}
+
+
+@app.websocket('/ws/scan')
+async def websocket_scan(websocket: WebSocket):
+    await websocket.accept()
+    try:
+        data = await websocket.receive_json()
+
+        host = data.get('host', '127.0.0.1')
+        start_port = int(data.get('start', 1))
+        end_port = int(data.get('end', 100))
+
+        for port in range(start_port, end_port + 1):
+            result = await check_port(host, port)
+            await websocket.send_json(result)
+
+        await websocket.send_json({'status': 'completed'})
+
+    except WebSocketDisconnect:
+        print("Client disconnected")
