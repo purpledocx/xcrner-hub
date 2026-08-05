@@ -17,21 +17,6 @@ A centralized platform providing powerful security and networking utilities, inc
 </p>
 
 </div>
-
----
-
-# Table of Contents
-
-- [ Features](#-features)
-- [ Tech Stack](#-tech-stack)
-- [ Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Running the Project](#-running-the-project)
-- [API Reference](#-api-reference)
-- [Usage Examples](#-usage-examples)
-- [Production Build](#-production-build)
-- [Contact](#-contact)
-
 ---
 # 🛠 Tech Stack
 
@@ -42,41 +27,6 @@ A centralized platform providing powerful security and networking utilities, inc
 | **Tooling** | npm • Node.js • Git |
 
 ---
-
-# Project Structure
-
-```text
-xcrner-hub/
-│
-├── backend/
-│   ├── main.py
-│   └── requirements.txt
-│
-├── xcrner-hub/
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── pages/
-│   │   └── components/
-│   │
-│   ├── package.json
-│   └── vite.config.js
-│
-└── README.md
-```
-
----
-
-# Installation
-
-## Clone the repository
-
-```bash
-git clone https://github.com/yourusername/xcrner-hub.git
-cd xcrner-hub
-```
-
----
-
 ## Backend Setup
 
 Navigate to the backend directory.
@@ -131,8 +81,6 @@ Open:
 http://localhost:5173
 ```
 
----
-
 # Running the Project
 
 | Service | URL |
@@ -140,7 +88,38 @@ http://localhost:5173
 | Frontend | http://localhost:5173 |
 | Backend | http://127.0.0.1:8000 |
 | API Docs | http://127.0.0.1:8000/docs |
+---
+# Project Structure
 
+```text
+xcrner-hub/
+│
+├── backend/
+│   ├── main.py
+│   └── requirements.txt
+│
+├── xcrner-hub/
+│   ├── src/
+│   │   ├── App.jsx
+│   │   ├── pages/
+│   │   └── components/
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
+```
+
+---
+
+# Installation
+
+## Clone the repository
+
+```bash
+git clone https://github.com/yourusername/xcrner-hub.git
+cd xcrner-hub
+```
 ---
 
 # API Reference
