@@ -20,7 +20,7 @@ A centralized platform providing powerful security and networking utilities, inc
 
 ---
 
-# 📖 Table of Contents
+# Table of Contents
 
 - [ Features](#-features)
 - [ Tech Stack](#-tech-stack)
@@ -43,7 +43,7 @@ A centralized platform providing powerful security and networking utilities, inc
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```text
 xcrner-hub/
@@ -66,7 +66,7 @@ xcrner-hub/
 
 ---
 
-# ⚙ Installation
+# Installation
 
 ## Clone the repository
 
@@ -133,7 +133,7 @@ http://localhost:5173
 
 ---
 
-# 🚀 Running the Project
+# Running the Project
 
 | Service | URL |
 |---------|------|
@@ -143,7 +143,7 @@ http://localhost:5173
 
 ---
 
-# 🔌 API Reference
+# API Reference
 
 ## POST `/analyze`
 
@@ -215,7 +215,7 @@ Scan a target host for open ports.
 
 ---
 
-# 💻 Usage Examples
+# Usage Examples
 
 ## Password Analyzer
 
@@ -260,7 +260,7 @@ const scanNetwork = async () => {
 
 ---
 
-# 🏗 Production Build
+# Production Build
 
 Generate an optimized frontend build.
 
