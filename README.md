@@ -276,13 +276,6 @@ dist/
 ```
 
 ---
-
-# 📬 Contact
-
-If you have questions, suggestions, or improvements, feel free to open an issue or reach out through your GitHub profile.
-
----
-
 <div align="center">
 </div>
-````
+
