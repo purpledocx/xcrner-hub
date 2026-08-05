@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Stuff from './pages/Stuff';
 import Projects from './pages/Projects';
 import PwdAnalyzer from './pages/PwdAnalyzer';
+import PortScanner from './pages/PortScanner';
 
 export default function App() {
 
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/stuff" element={<Stuff />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/analyzer" element={<PwdAnalyzer />} />
+          <Route path='/portscanner' element={<PortScanner />} />
         </Routes>
 
         <Footer />

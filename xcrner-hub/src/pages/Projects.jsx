@@ -10,6 +10,14 @@ const PROJECTS = [
     path: "/analyzer",
     active: true,
   },
+  {
+    id: "port-scanner",
+    title: "Live Port Scanner",
+    description:
+      "Real-time TCP port scanning tool built with WebSockets and FastAPI backend.",
+    path: "/scanner",
+    active: true,
+  },
 ];
 
 export default function Projects() {
