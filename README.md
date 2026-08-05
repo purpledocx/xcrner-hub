@@ -27,6 +27,14 @@ A centralized platform providing powerful security and networking utilities, inc
 | **Tooling** | npm • Node.js • Git |
 
 ---
+# Installation
+
+## Clone the repository
+
+```bash
+git clone https://github.com/yourusername/xcrner-hub.git
+cd xcrner-hub
+```
 ## Backend Setup
 
 Navigate to the backend directory.
@@ -108,17 +116,6 @@ xcrner-hub/
 │   └── vite.config.js
 │
 └── README.md
-```
-
----
-
-# Installation
-
-## Clone the repository
-
-```bash
-git clone https://github.com/yourusername/xcrner-hub.git
-cd xcrner-hub
 ```
 ---
 
