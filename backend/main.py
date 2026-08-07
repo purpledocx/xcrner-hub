@@ -85,7 +85,6 @@ async def check_port(host: str, port: int, timeout: float = 0.5) -> dict:
     except (asyncio.TimeoutError, OSError):
         return {"port": port, "status": "closed"}
 
-
 @app.websocket('/ws/scan')
 async def websocket_scan(websocket: WebSocket):
     await websocket.accept()
@@ -96,8 +95,16 @@ async def websocket_scan(websocket: WebSocket):
         start_port = int(data.get('start', 1))
         end_port = int(data.get('end', 100))
 
-        for port in range(start_port, end_port + 1):
-            result = await check_port(host, port)
+        sem = asyncio.Semaphore(200)
+
+        async def bounded_check_port(p: int):
+            async with sem:
+                return await check_port(host, p)
+
+        tasks = [bounded_check_port(port) for port in range(start_port, end_port + 1)]
+
+        for task in asyncio.as_completed(tasks):
+            result = await task
             await websocket.send_json(result)
 
         await websocket.send_json({'status': 'completed'})

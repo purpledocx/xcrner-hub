@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* smooth cross-document transition */
+@view-transition {
+  navigation: auto;
+}
