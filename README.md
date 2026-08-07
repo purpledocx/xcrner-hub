@@ -32,7 +32,7 @@ A centralized platform providing powerful security and networking utilities, inc
 ## Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/xcrner-hub.git
+git clone https://github.com/purpledocx/xcrner-hub.git
 cd xcrner-hub
 ```
 ## Backend Setup
